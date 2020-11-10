@@ -1,4 +1,1 @@
-<video controls>
-  <source src="{{stream.url}}" type="{{stream.videoType}}" />
-  Browser not supported
-</video>
+<app-vjs-player id="{{stream.id}}" [options]="{ autoplay: true, controls: false, sources: [{ src: stream.url, type: stream.videoType }]}"></app-vjs-player>

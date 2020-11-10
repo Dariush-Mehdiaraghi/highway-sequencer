@@ -7,6 +7,7 @@ import { HomeComponent } from './views/home/home.component';
 import { StreamListComponent } from './components/stream-list/stream-list.component';
 import { StreamItemComponent } from './components/stream-item/stream-item.component';
 import { VideoPreviewComponent } from './components/video-preview/video-preview.component';
+import { VjsPlayerComponent } from './components/vjs-player/vjs-player.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +15,12 @@ import { VideoPreviewComponent } from './components/video-preview/video-preview.
     HomeComponent,
     StreamListComponent,
     StreamItemComponent,
-    VideoPreviewComponent
+    VideoPreviewComponent,
+    VjsPlayerComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
