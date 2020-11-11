@@ -1,4 +1,22 @@
+@import "../../../styles";
+
 :host {
-  height: 200px;
-  overflow: hidden;
+  display: block;
+  margin: 16px;
+  border: solid 2px transparent;
+}
+
+:host:hover {
+  border: solid 2px $accent;
+  cursor: pointer;
+}
+
+.description {
+  display: flex;
+  justify-content: center;
+}
+
+.name {
+  text-transform: uppercase;
+  color: $accent;
 }

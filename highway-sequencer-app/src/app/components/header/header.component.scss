@@ -1,0 +1,13 @@
+@import "../../../styles";
+
+:host {
+  color: $accent;
+  border: solid 2px $layout;
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.content {
+
+  margin: auto;
+}

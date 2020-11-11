@@ -8,6 +8,8 @@ import { StreamListComponent } from './components/stream-list/stream-list.compon
 import { StreamItemComponent } from './components/stream-item/stream-item.component';
 import { VideoPreviewComponent } from './components/video-preview/video-preview.component';
 import { VjsPlayerComponent } from './components/vjs-player/vjs-player.component';
+import { HeaderComponent } from './components/header/header.component';
+import { VideoIframeComponent } from './components/video-iframe/video-iframe.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { VjsPlayerComponent } from './components/vjs-player/vjs-player.component
     StreamItemComponent,
     VideoPreviewComponent,
     VjsPlayerComponent,
+    HeaderComponent,
+    VideoIframeComponent,
   ],
   imports: [
     BrowserModule,
