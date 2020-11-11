@@ -19,7 +19,6 @@ export class StreamListComponent implements OnInit {
   ngOnInit(): void {
     this.streamsSubscription = this.streamService.streams$.subscribe((streams) => {
       this.streams = streams;
-
     });
   }
 

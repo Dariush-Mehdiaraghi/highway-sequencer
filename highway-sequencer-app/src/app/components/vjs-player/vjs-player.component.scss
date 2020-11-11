@@ -1,1 +1,9 @@
 @import '../../../../node_modules/video.js/dist/video-js.css';
+
+:host {
+  width: auto;
+}
+
+video {
+  width: auto !important;
+}

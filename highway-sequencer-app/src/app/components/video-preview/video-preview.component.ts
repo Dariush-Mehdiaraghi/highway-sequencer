@@ -9,7 +9,13 @@ import {StreamModel} from "../../models/stream.model";
 export class VideoPreviewComponent implements OnInit {
 
   @Input()
-  public stream: StreamModel
+  public stream: StreamModel;
+
+  @Input()
+  public videoWidth: number;
+
+  @Input()
+  public videoHeight: number;
 
   constructor() { }
 
