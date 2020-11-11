@@ -4,7 +4,8 @@
   color: $accent;
   border: solid 2px $layout;
   display: flex;
-  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: solid 2px $accent;
 }
 
 .content {
