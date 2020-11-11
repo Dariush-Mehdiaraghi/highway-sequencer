@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {StreamService} from "../../services/stream.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import {switchMap} from "rxjs/operators";
 import {StreamModel} from "../../models/stream.model";
 
 @Component({
@@ -18,8 +17,9 @@ export class DetailComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
       this.stream = this.streamService.getStream(params.streamId);
-      console.log(this.stream);
     });
   }
+
+
 
 }

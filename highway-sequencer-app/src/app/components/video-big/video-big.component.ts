@@ -11,9 +11,12 @@ export class VideoBigComponent implements OnInit {
   @Input()
   public stream: StreamModel;
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit(): void {
   }
+
 
 }

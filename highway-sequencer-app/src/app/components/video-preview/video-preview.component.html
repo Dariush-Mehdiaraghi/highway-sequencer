@@ -1,1 +1,1 @@
-<app-vjs-player *ngIf="stream.videoType != 'iframe'" class="vjs-layout-x-small" id="{{stream.id}}" [options]="{ autoplay: true, fill: true, controls: false, sources: [{ src: stream.url, type: stream.videoType }]}"></app-vjs-player>
+<app-vjs-player [enabledDetection]="false" *ngIf="stream.videoType != 'iframe'" class="vjs-layout-x-small" id="{{stream.id}}" [options]="{ autoplay: true, fill: false, width: 254, height: 143, controls: false, sources: [{ src: stream.url, type: stream.videoType }]}"></app-vjs-player>

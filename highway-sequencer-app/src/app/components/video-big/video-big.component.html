@@ -1,2 +1,3 @@
-<app-vjs-player id="{{stream.id}}" [options]="{ autoplay: true, fill: true, controls: false, sources: [{ src: stream.url, type: stream.videoType }]}"></app-vjs-player>
+<app-vjs-player [enabledDetection]="true"  id="video-big" [options]="{ autoplay: true, fill: true, controls: false, sources: [{ src: stream.url, type: stream.videoType }]}"></app-vjs-player>
+
 
