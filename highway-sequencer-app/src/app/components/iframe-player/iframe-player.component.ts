@@ -4,10 +4,10 @@ import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-video-iframe',
-  templateUrl: './video-iframe.component.html',
-  styleUrls: ['./video-iframe.component.scss']
+  templateUrl: './iframe-player.component.html',
+  styleUrls: ['./iframe-player.component.scss']
 })
-export class VideoIframeComponent implements OnInit {
+export class IframePlayerComponent implements OnInit {
 
   @Input()
   public stream: StreamModel;

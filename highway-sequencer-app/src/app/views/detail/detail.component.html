@@ -1,0 +1,7 @@
+<a [routerLink]="['/home']">< home</a>
+<h2>{{stream.name}}</h2>
+<div class="components">
+  <app-video-big *ngIf="stream !== undefined" [stream]="stream"></app-video-big>
+  <app-sounds></app-sounds>
+</div>
+

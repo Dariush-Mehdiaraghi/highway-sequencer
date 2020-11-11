@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VideoIframeComponent } from './video-iframe.component';
+import { IframePlayerComponent } from './iframe-player.component';
 
 describe('VideoIframeComponent', () => {
-  let component: VideoIframeComponent;
-  let fixture: ComponentFixture<VideoIframeComponent>;
+  let component: IframePlayerComponent;
+  let fixture: ComponentFixture<IframePlayerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ VideoIframeComponent ]
+      declarations: [ IframePlayerComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(VideoIframeComponent);
+    fixture = TestBed.createComponent(IframePlayerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

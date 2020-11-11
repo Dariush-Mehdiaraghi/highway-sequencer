@@ -1,0 +1,7 @@
+@import "../../../styles";
+
+:host {
+  display: flex;
+  justify-content: center;
+  color: $accent;
+}

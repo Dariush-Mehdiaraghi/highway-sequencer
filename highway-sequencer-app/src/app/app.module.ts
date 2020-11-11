@@ -9,7 +9,10 @@ import { StreamItemComponent } from './components/stream-item/stream-item.compon
 import { VideoPreviewComponent } from './components/video-preview/video-preview.component';
 import { VjsPlayerComponent } from './components/vjs-player/vjs-player.component';
 import { HeaderComponent } from './components/header/header.component';
-import { VideoIframeComponent } from './components/video-iframe/video-iframe.component';
+import { DetailComponent } from './views/detail/detail.component';
+import { PageNotFoundComponent } from './views/page-not-found/page-not-found.component';
+import { VideoBigComponent } from './components/video-big/video-big.component';
+import { SoundsComponent } from './components/sounds/sounds.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { VideoIframeComponent } from './components/video-iframe/video-iframe.com
     VideoPreviewComponent,
     VjsPlayerComponent,
     HeaderComponent,
-    VideoIframeComponent,
+    DetailComponent,
+    PageNotFoundComponent,
+    VideoBigComponent,
+    SoundsComponent
   ],
   imports: [
     BrowserModule,

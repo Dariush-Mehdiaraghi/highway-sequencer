@@ -15,7 +15,7 @@ export class StreamService {
   }
 
   // get current loaded streams
-  public get stream() : StreamModel[] {
+  public get streams() : StreamModel[] {
     return this._streams.value;
   }
 
@@ -23,6 +23,10 @@ export class StreamService {
 
     // init default available streams
     this._streams.next(this.loadStreams());
+  }
+
+  public getStream(streamId: number) : StreamModel {
+    return this.streams.find(o => o.id == streamId);
   }
 
   private loadStreams() : StreamModel[] {

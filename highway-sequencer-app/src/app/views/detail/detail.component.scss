@@ -1,0 +1,16 @@
+@import "../../../styles";
+
+:host {
+  border-radius: solid 2px $layout;
+  padding: 16px;
+}
+
+h2 {
+  text-transform: uppercase;
+  border-radius: solid 2px $layout;
+}
+.components {
+  display: flex;
+  max-width: 1000px;
+  border-radius: solid 2px $layout;
+}
