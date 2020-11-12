@@ -4,7 +4,9 @@ export module TensorflowModel {
     export async function detectVideo(video: HTMLVideoElement, canvas: HTMLCanvasElement) {
       if(video !== undefined) {
         const model = await cocoSSD.load({base: "mobilenet_v1"});
+        
         this.detectFrame(video, canvas, model);
+      
       }
       else {
         console.log('Passed video was not loaded yet!');
@@ -14,7 +16,6 @@ export module TensorflowModel {
     export async function detectFrame(video, canvas, model) {
       const predictions = await model.detect(video);
       this.renderPredictions(video, canvas, predictions);
-
       requestAnimationFrame(() => {
         this.detectFrame(video, canvas, model);
       });
