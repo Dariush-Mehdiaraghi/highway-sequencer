@@ -35,7 +35,9 @@ export class SoundObjectComponent implements OnInit {
   public mouseUp() {
 
     const boundingRect = this.el.nativeElement.children[0].getBoundingClientRect()
-    this.soundObjectService.setSoundObjectPosition = { name: this.soundObject.name, position: { left: boundingRect.left, top: boundingRect.top } }
+    console.log(boundingRect);
+    
+    this.soundObjectService.setSoundObjectPosition = { name: this.soundObject.name, position: { left: boundingRect.left, top: boundingRect.top, width: boundingRect.width, height: boundingRect.height } }
 
   }
 

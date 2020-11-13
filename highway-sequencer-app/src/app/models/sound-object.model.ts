@@ -5,5 +5,7 @@ export interface SoundObject {
   position: {
     left: number;
     top: number;
+    width: number;
+    height: number;
   }
 }

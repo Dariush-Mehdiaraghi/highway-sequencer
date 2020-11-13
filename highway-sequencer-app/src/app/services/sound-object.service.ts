@@ -17,7 +17,7 @@ export class SoundObjectService {
   public get soundObjects(): SoundObject[] {
     return this._soundObjects.value;
   }
-  public set setSoundObjectPosition(newPosObj: { name: string, position: { left: number, top: number } }) {
+  public set setSoundObjectPosition(newPosObj: { name: string, position: { left: number, top: number, width: number, height: number} }) {
     let newSoundObjects = this.soundObjects
     newSoundObjects[newSoundObjects.indexOf(newSoundObjects.find(soundObject => soundObject.name == newPosObj.name))].position = newPosObj.position
     this._soundObjects.next(newSoundObjects)

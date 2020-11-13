@@ -9,7 +9,9 @@ export const soundObjectList: SoundObject[] = [
     type: "drums",
     position:{
       left:0,
-      top:0
+      top:0,
+      width: 10,
+      height: 10
     }
   },
   {
@@ -18,7 +20,9 @@ export const soundObjectList: SoundObject[] = [
     type: "synth",
     position:{
       left:0,
-      top:0
+      top:0,
+      width: 10,
+      height: 10
     }
   },
   

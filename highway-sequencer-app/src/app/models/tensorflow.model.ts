@@ -59,13 +59,14 @@ export module TensorflowModel {
       soundObjects.forEach(soundObject => {
         let soundObjX = soundObject.position.left - canvasLeft 
         let soundObjY = soundObject.position.top - canvasTop
-
-        let isColliding =  !(soundObjX >= (x + width) || soundObjY >= y + height || (soundObjX + 200) <= x || (soundObjY + 42) <= y)
+        let soundObjHeight = soundObject.position.height
+        let soundObjWidth = soundObject.position.width
+        let isColliding =  !(soundObjX >= (x + width) || soundObjY >= y + height || (soundObjX + soundObjWidth) <= x || (soundObjY + soundObjHeight) <= y)
         if(isColliding){
           sampler.triggerAttackRelease(["Eb4"], 4);
         }
         ctx.strokeStyle = "#ff0081";
-        ctx.strokeRect(soundObjX, soundObjY, 200, 42);
+        ctx.strokeRect(soundObjX, soundObjY, soundObjWidth, soundObjHeight);
 
       })
 
