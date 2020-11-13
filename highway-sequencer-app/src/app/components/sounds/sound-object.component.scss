@@ -1,0 +1,9 @@
+@import "../../../styles";
+
+.sound-object{
+  border: solid;
+  border: solid 2px $accent;
+  cursor: pointer;
+  user-select: none;
+  background-color: white;
+}

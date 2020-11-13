@@ -24,6 +24,7 @@
     "@tensorflow/tfjs-backend-cpu": "^2.7.0",
     "@tensorflow/tfjs-backend-webgl": "^2.7.0",
     "@videojs/http-streaming": "^2.3.0",
+    "angular2-draggable": "^2.3.2",
     "rxjs": "~6.6.0",
     "save": "^2.4.0",
     "tslib": "^2.0.0",

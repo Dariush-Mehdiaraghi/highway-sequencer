@@ -1,3 +1,4 @@
+import { SoundObject } from './models/sound-object.model';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -13,6 +14,8 @@ import { DetailComponent } from './views/detail/detail.component';
 import { PageNotFoundComponent } from './views/page-not-found/page-not-found.component';
 import { VideoBigComponent } from './components/video-big/video-big.component';
 import { SoundsComponent } from './components/sounds/sounds.component';
+import { SoundObjectComponent } from './components/sounds/sound-object.component';
+import { AngularDraggableModule } from 'angular2-draggable';
 
 @NgModule({
   declarations: [
@@ -26,11 +29,14 @@ import { SoundsComponent } from './components/sounds/sounds.component';
     DetailComponent,
     PageNotFoundComponent,
     VideoBigComponent,
-    SoundsComponent
+    SoundsComponent,
+    SoundObjectComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AngularDraggableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
