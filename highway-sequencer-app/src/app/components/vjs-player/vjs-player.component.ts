@@ -13,6 +13,8 @@ import videojs from 'video.js';
 import {BehaviorSubject, Observable} from "rxjs";
 import * as cocoSSD from "@tensorflow-models/coco-ssd";
 import {TensorflowModel} from "../../models/tensorflow.model";
+import { SoundObject } from 'src/app/models/sound-object.model';
+import { SoundObjectService } from 'src/app/services/sound-object.service';
 
 @Component({
   selector: 'app-vjs-player',
@@ -46,12 +48,18 @@ export class VjsPlayerComponent implements OnInit, OnDestroy {
 
   public video: HTMLVideoElement;
 
-  constructor(private elementRef: ElementRef) { }
+  constructor(private elementRef: ElementRef, private soundObjectService: SoundObjectService) { }
+
+
+  public soundObjects: SoundObject[] = [];
 
   ngOnInit() {
     // instantiate Video.js
     this.player = videojs(this.target.nativeElement, this.options, function onPlayerReady() {});
 
+    this.soundObjectService.soundObjects$.subscribe((soundObjectsFromService) => {
+      this.soundObjects = soundObjectsFromService
+    })
   }
 
   ngOnDestroy() {
@@ -67,8 +75,8 @@ export class VjsPlayerComponent implements OnInit, OnDestroy {
       const component = document.getElementById("video-big");
       const video = <HTMLVideoElement>component.getElementsByClassName("vjs-tech")[0];
       const canvas = <HTMLCanvasElement> document.getElementById("canvas");
-
-      await TensorflowModel.detectVideo(video, canvas);
+      
+      await TensorflowModel.detectVideo(video, canvas, this.soundObjects);
     }
   }
 }
