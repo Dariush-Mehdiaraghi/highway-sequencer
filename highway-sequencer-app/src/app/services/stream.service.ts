@@ -36,6 +36,7 @@ export class StreamService {
     streamsFound.push({ id: 2, url: "https://s3.ipcamlive.com/streams/035fac90be7f0b35c/stream.m3u8", videoType: "application/x-mpegURL", name: "england"});
     streamsFound.push({ id: 3, url: "https://wzmedia.dot.ca.gov/D3/5_pocket.stream/chunklist_w22356296.m3u8", videoType: "application/x-mpegURL", name: "sacramento"});
     //streamsFound.push({ id: 3, url: "https://www.youtube.com/embed/XDzc5u0zvmU", videoType: "iframe", name: "Shin-Midōsuji"});
+    streamsFound.push({ id: 4, url: "https://wzmedia.dot.ca.gov/D3/99_lincoln.stream/chunklist_w691555454.m3u8", videoType: "application/x-mpegURL", name: "yuba city"});
 
     return streamsFound;
   }
