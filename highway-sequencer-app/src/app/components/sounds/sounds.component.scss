@@ -2,5 +2,16 @@
 
 :host {
   border: solid 2px $accent;
-  width: 200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  .key-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .black-keys-container {
+    transform: translateY(calc(#{$keyheight}/ 2));
+    margin-left: calc(#{$keywidth}/ 2);
+    z-index: 9999;
+  }
 }
