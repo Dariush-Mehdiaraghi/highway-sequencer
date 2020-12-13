@@ -15,6 +15,7 @@ import * as cocoSSD from "@tensorflow-models/coco-ssd";
 import {TensorflowModel} from "../../models/tensorflow.model";
 import { SoundObject } from 'src/app/models/sound-object.model';
 import { SoundObjectService } from 'src/app/services/sound-object.service';
+import {YoloModel} from "../../models/yolo.model";
 
 @Component({
   selector: 'app-vjs-player',
@@ -75,8 +76,8 @@ export class VjsPlayerComponent implements OnInit, OnDestroy {
       const component = document.getElementById("video-big");
       const video = <HTMLVideoElement>component.getElementsByClassName("vjs-tech")[0];
       const canvas = <HTMLCanvasElement> document.getElementById("canvas");
-      
-      await TensorflowModel.detectVideo(video, canvas, this.soundObjects);
+      await YoloModel.detectVideo(canvas, video);
+      //await TensorflowModel.detectVideo(video, canvas, this.soundObjects);
     }
   }
 }

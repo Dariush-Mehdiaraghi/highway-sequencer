@@ -5,10 +5,8 @@ import * as Tone from 'tone'
 export module TensorflowModel {
   export async function detectVideo(video: HTMLVideoElement, canvas: HTMLCanvasElement, soundObjects: SoundObject[]) {
     if (video !== undefined) {
-      const model = await cocoSSD.load({ base: "mobilenet_v1" });
-
+      const model = await cocoSSD.load({ base: "mobilenet_v2" });
       this.detectFrame(video, canvas, model, soundObjects);
-
     }
     else {
       console.log('Passed video was not loaded yet!');
@@ -32,11 +30,11 @@ export module TensorflowModel {
     release: 1,
     baseUrl: "https://tonejs.github.io/audio/salamander/",
   }).toDestination();
-  
-  
+
+
   export function renderPredictions(video, canvas, predictions, soundObjects: SoundObject[]) {
 
-    
+
     const ctx = canvas.getContext("2d");
     const canvasLeft = document.querySelector("#canvas").getBoundingClientRect().left
     const canvasTop = document.querySelector("#canvas").getBoundingClientRect().top
@@ -57,7 +55,7 @@ export module TensorflowModel {
       const width = prediction.bbox[2];
       const height = prediction.bbox[3];
       soundObjects.forEach(soundObject => {
-        let soundObjX = soundObject.position.left - canvasLeft 
+        let soundObjX = soundObject.position.left - canvasLeft
         let soundObjY = soundObject.position.top - canvasTop
         let soundObjHeight = soundObject.position.height
         let soundObjWidth = soundObject.position.width
@@ -76,7 +74,7 @@ export module TensorflowModel {
       ctx.strokeStyle = "#00FFFF";
       ctx.lineWidth = 2;
       ctx.strokeRect(x, y, width, height);
-      
+
       // Draw the label background.
       ctx.fillStyle = "#00FFFF";
       const textWidth = ctx.measureText(prediction.class).width;
