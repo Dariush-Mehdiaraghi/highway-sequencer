@@ -1,3 +1,4 @@
+
 import { SoundObject } from './sound-object.model';
 import * as cocoSSD from "@tensorflow-models/coco-ssd";
 import * as Tone from 'tone'
@@ -49,7 +50,8 @@ export module TensorflowModel {
     ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
 
     predictions.forEach(prediction => {
-
+      if (!(prediction.bbox[2] > 200 && prediction.bbox[3] > 200)) {
+        
       const x = prediction.bbox[0];
       const y = prediction.bbox[1];
       const width = prediction.bbox[2];
@@ -61,7 +63,9 @@ export module TensorflowModel {
         let soundObjWidth = soundObject.position.width
         let isColliding =  !(soundObjX >= (x + width) || soundObjY >= y + height || (soundObjX + soundObjWidth) <= x || (soundObjY + soundObjHeight) <= y)
         if(isColliding){
-          sampler.triggerAttackRelease(["Eb4"], 4);
+          console.log("is colliding");
+          
+          sampler.triggerAttackRelease(Tone.Frequency(soundObjects.indexOf(soundObject) + 69, "midi").toNote(),  "8n", 4);
         }
         ctx.strokeStyle = "#ff0081";
         ctx.strokeRect(soundObjX, soundObjY, soundObjWidth, soundObjHeight);
@@ -80,6 +84,7 @@ export module TensorflowModel {
       const textWidth = ctx.measureText(prediction.class).width;
       const textHeight = parseInt(font, 10); // base 10
       ctx.fillRect(x, y, textWidth + 4, textHeight + 4);
+    }
     });
 
     predictions.forEach(prediction => {
@@ -88,6 +93,8 @@ export module TensorflowModel {
       // Draw the text last to ensure it's on top.
       ctx.fillStyle = "#000000";
       ctx.fillText(prediction.class, x, y);
+      // ctx.fillText("width: "+prediction.bbox[2], x + 50, y);
+      // ctx.fillText("height: "+prediction.bbox[3], x + 50, y+ 10);
     });
   };
 }

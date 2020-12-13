@@ -1,9 +1,25 @@
 @import "../../../styles";
 
-.sound-object{
-  border: solid;
-  border: solid 2px $accent;
-  cursor: pointer;
+.sound-object {
+  outline: solid 2px $accent;
+  cursor: grab;
   user-select: none;
+  height: $keyheight;
   background-color: white;
+  width: $keywidth;
+  z-index: 9;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+
+}
+.black-key {
+  border: none !important;
+  background-color: black;
+  color: white;
+  outline: white;
+  height: calc(#{$keyheight}/ 2);
+}
+.has-margin-left {
+  margin-left: $keywidth;
 }

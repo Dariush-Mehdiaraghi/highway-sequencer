@@ -4,26 +4,228 @@ import { SoundObject } from './../models/sound-object.model';
 
 export const soundObjectList: SoundObject[] = [
   {
-    name: "kick",
-    pathToFile: "sound-files/kick.mp3",
-    type: "drums",
-    position:{
-      left:0,
-      top:0,
+    name: "A",
+    position: {
+      left: 0,
+      top: 0,
       width: 10,
       height: 10
     }
   },
   {
-    name: "synth",
-    pathToFile: "sound-files/synth.mp3",
-    type: "synth",
-    position:{
-      left:0,
-      top:0,
+    name: "A#",
+    position: {
+      left: 0,
+      top: 0,
       width: 10,
       height: 10
     }
   },
-  
+  {
+    name: "B",
+    position: {
+      left: 0,
+      top: 0,
+      width: 10,
+      height: 10
+    }
+  },
+  {
+    name: "C",
+    position: {
+      left: 0,
+      top: 0,
+      width: 10,
+      height: 10
+    }
+  },
+  {
+    name: "C#",
+    position: {
+      left: 0,
+      top: 0,
+      width: 10,
+      height: 10
+    }
+  },
+  {
+    name: "D",
+    position: {
+      left: 0,
+      top: 0,
+      width: 10,
+      height: 10
+    }
+  },
+  {
+    name: "D#",
+    position: {
+      left: 0,
+      top: 0,
+      width: 10,
+      height: 10
+    }
+  },
+  {
+    name: "E",
+    position: {
+      left: 0,
+      top: 0,
+      width: 10,
+      height: 10
+    }
+  },
+  {
+    name: "F",
+    position: {
+      left: 0,
+      top: 0,
+      width: 10,
+      height: 10
+    }
+  },
+  {
+    name: "F#",
+    position: {
+      left: 0,
+      top: 0,
+      width: 10,
+      height: 10
+    }
+  },
+  {
+    name: "G",
+    position: {
+      left: 0,
+      top: 0,
+      width: 10,
+      height: 10
+    }
+  },
+  {
+    name: "G#",
+    position: {
+      left: 0,
+      top: 0,
+      width: 10,
+      height: 10
+    }
+  },
+  {
+    name: "A",
+    position: {
+      left: 0,
+      top: 0,
+      width: 10,
+      height: 10
+    }
+  },
+  {
+    name: "A#",
+    position: {
+      left: 0,
+      top: 0,
+      width: 10,
+      height: 10
+    }
+  },
+  {
+    name: "B",
+    position: {
+      left: 0,
+      top: 0,
+      width: 10,
+      height: 10
+    }
+  },
+  {
+    name: "C",
+    position: {
+      left: 0,
+      top: 0,
+      width: 10,
+      height: 10
+    }
+  },
+  {
+    name: "C#",
+    position: {
+      left: 0,
+      top: 0,
+      width: 10,
+      height: 10
+    }
+  },
+  {
+    name: "D",
+    position: {
+      left: 0,
+      top: 0,
+      width: 10,
+      height: 10
+    }
+  },
+  {
+    name: "D#",
+    position: {
+      left: 0,
+      top: 0,
+      width: 10,
+      height: 10
+    }
+  },
+  {
+    name: "E",
+    position: {
+      left: 0,
+      top: 0,
+      width: 10,
+      height: 10
+    }
+  },
+  {
+    name: "F",
+    position: {
+      left: 0,
+      top: 0,
+      width: 10,
+      height: 10
+    }
+  },
+  {
+    name: "F#",
+    position: {
+      left: 0,
+      top: 0,
+      width: 10,
+      height: 10
+    }
+  },
+  {
+    name: "G",
+    position: {
+      left: 0,
+      top: 0,
+      width: 10,
+      height: 10
+    }
+  },
+  {
+    name: "G#",
+    position: {
+      left: 0,
+      top: 0,
+      width: 10,
+      height: 10
+    }
+  },
+  {
+    name: "A",
+    position: {
+      left: 0,
+      top: 0,
+      width: 10,
+      height: 10
+    }
+  }
 ];
