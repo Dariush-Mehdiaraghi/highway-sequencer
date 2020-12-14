@@ -12,6 +12,12 @@
   justify-content: flex-end;
   flex-direction: column;
   font-size: 0.7rem;
+  
+}
+.triggered{
+  background-color: green;
+  transition: all 1s ease-out;
+
 }
 .black-key {
   border: none !important;

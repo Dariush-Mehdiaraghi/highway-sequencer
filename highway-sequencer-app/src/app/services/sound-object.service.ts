@@ -18,7 +18,6 @@ export class SoundObjectService {
     return this._soundObjects.value;
   }
   public set setSoundObjectPosition(newPosObj: { name: string, position: { left: number, top: number, width: number, height: number } }) {
-
     this._soundObjects.next( this.getNewStateWithValues(newPosObj.name, "position", newPosObj.position))
   }
   public set setTriggered(newTriggeredObjName: string) {

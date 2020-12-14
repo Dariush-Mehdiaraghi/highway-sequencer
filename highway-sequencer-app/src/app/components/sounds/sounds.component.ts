@@ -13,6 +13,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sounds.component.scss'],
 
   template: `
+    <div class="keyboard"> 
     <div class="black-keys-container key-container"> 
       <sound-object class="black-key" ngResizable [soundObject]=soundObject *ngFor="let soundObject of blackKeys" >
       </sound-object>
@@ -20,6 +21,7 @@ import { Component, OnInit } from '@angular/core';
     <div class="white-keys-container key-container"> 
       <sound-object class="white-key" ngResizable [soundObject]=soundObject *ngFor="let soundObject of whiteKeys" >
       </sound-object>
+    </div>
     </div>
 `,
 })

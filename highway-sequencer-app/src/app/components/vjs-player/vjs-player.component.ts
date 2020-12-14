@@ -63,7 +63,8 @@ export class VjsPlayerComponent implements OnInit, OnDestroy {
       const component = document.getElementById("video-big");
       const video = <HTMLVideoElement>component.getElementsByClassName("vjs-tech")[0];
       const canvas = <HTMLCanvasElement> document.getElementById("canvas");
-      await YoloModel.detectVideo(YoloTypeModel.yoloV2Tiny, video, canvas, this.soundObjects);
+      
+      await YoloModel.detectVideo(YoloTypeModel.yoloV3Tiny, video, canvas, this.soundObjects, this.soundObjectService);
       //await TensorflowModel.detectVideo(video, canvas, this.soundObjects);
     }
   }

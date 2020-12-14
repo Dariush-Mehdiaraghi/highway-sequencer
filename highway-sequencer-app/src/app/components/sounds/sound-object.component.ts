@@ -1,4 +1,3 @@
-
 import { SoundObject } from './../../models/sound-object.model';
 import { Component, OnInit, Input, ElementRef } from '@angular/core';
 import { SoundObjectService } from 'src/app/services/sound-object.service';
@@ -9,9 +8,9 @@ import { SoundObjectService } from 'src/app/services/sound-object.service';
   styleUrls: ['./sound-object.component.scss'],
 
   template: `
-  <div class="keyboard">
-  <div ngDraggable class="sound-object resizable-widget ng-resizable"  [class.black-key]="soundObject.name.includes('#')" [class.has-margin-left]="soundObject.name.includes('C#') || soundObject.name.includes('F#') " (mouseup)="mouseUp()">
-  </div>
+
+  <div ngDraggable class="sound-object resizable-widget ng-resizable" [class.triggered]="soundObject.triggered" [class.black-key]="soundObject.name.includes('#')" [class.has-margin-left]="soundObject.name.includes('C#') || soundObject.name.includes('F#') " (mouseup)="mouseUp()">
+    {{ soundObject.name }}
   </div>
 `,
 })
@@ -34,7 +33,7 @@ export class SoundObjectComponent implements OnInit {
   public mouseUp() {
 
     const boundingRect = this.el.nativeElement.children[0].getBoundingClientRect()
-    this.soundObjectService.setSoundObjectPosition = { name: this.soundObject.name, position: { left: boundingRect.left, top: boundingRect.top, width: boundingRect.width, height: boundingRect.height } }
+   this.soundObjectService.setSoundObjectPosition = { name: this.soundObject.name, position: { left: boundingRect.left, top: boundingRect.top, width: boundingRect.width, height: boundingRect.height } }
 
   }
 
