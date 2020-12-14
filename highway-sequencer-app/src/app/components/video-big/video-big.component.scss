@@ -1,5 +1,6 @@
 :host {
-  display: block;
+  display: flex;
+  justify-content: center;
   //height: 48vh;
   flex-grow: 1;
 }
