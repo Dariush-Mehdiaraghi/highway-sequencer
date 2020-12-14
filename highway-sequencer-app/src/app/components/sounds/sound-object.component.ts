@@ -9,9 +9,9 @@ import { SoundObjectService } from 'src/app/services/sound-object.service';
   styleUrls: ['./sound-object.component.scss'],
 
   template: `
+  <div class="keyboard">
   <div ngDraggable class="sound-object resizable-widget ng-resizable"  [class.black-key]="soundObject.name.includes('#')" [class.has-margin-left]="soundObject.name.includes('C#') || soundObject.name.includes('F#') " (mouseup)="mouseUp()">
-   <div ngResizable [rzHandles]="'n,e,s,w,se,sw,ne,nw'" >{{ soundObject.name }}</div> 
-
+  </div>
   </div>
 `,
 })

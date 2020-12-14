@@ -1,5 +1,6 @@
 
 import { SoundObject } from './sound-object.model';
+import { SoundObjectService } from 'src/app/services/sound-object.service';
 import * as cocoSSD from "@tensorflow-models/coco-ssd";
 import * as Tone from 'tone'
 
@@ -65,8 +66,9 @@ export module TensorflowModel {
         let isColliding =  !(soundObjX >= (x + width) || soundObjY >= y + height || (soundObjX + soundObjWidth) <= x || (soundObjY + soundObjHeight) <= y)
         if(isColliding){
           console.log("is colliding");
-
-          sampler.triggerAttackRelease(Tone.Frequency(soundObjects.indexOf(soundObject) + 69, "midi").toNote(),  "8n", 4);
+          sampler.triggerAttackRelease(soundObject.name, "2n");
+          //this.soundObjectService.setTriggered
+         // sampler.triggerAttackRelease(Tone.Frequency(soundObjects.indexOf(soundObject) + 69, "midi").toNote(), "2n");
         }
         ctx.strokeStyle = "#ff0081";
         ctx.strokeRect(soundObjX, soundObjY, soundObjWidth, soundObjHeight);

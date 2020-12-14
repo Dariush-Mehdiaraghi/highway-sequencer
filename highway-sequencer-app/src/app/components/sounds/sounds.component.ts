@@ -1,4 +1,4 @@
-import { soundObjectList } from './../../services/sound-object-list';
+import { noteNames } from '../../services/note-names';
 import { StreamService } from './../../services/stream.service';
 import { SoundObjectService } from './../../services/sound-object.service';
 
@@ -32,6 +32,7 @@ export class SoundsComponent implements OnInit {
   constructor(private soundObjectService: SoundObjectService) { }
   ngOnInit(): void {
     this.soundObjectService.soundObjects$.subscribe((soundObjectsFromService) => {
+      
       this.whiteKeys = soundObjectsFromService.filter(obj => !obj.name.includes('#'))
       this.blackKeys = soundObjectsFromService.filter(obj => obj.name.includes('#'))
     })

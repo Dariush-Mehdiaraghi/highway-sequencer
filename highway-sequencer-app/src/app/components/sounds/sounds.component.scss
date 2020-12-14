@@ -1,17 +1,21 @@
 @import "../../../styles";
 
 :host {
-  border: solid 2px $accent;
-  width: 100%;
+  //border: solid 2px $accent;
+  //width: 100%;
   display: flex;
+  
   flex-direction: column;
+  .keyboard{
+    
+  }
   .key-container {
     display: flex;
     flex-direction: row;
   }
   .black-keys-container {
     transform: translateY(calc(#{$keyheight}/ 2));
-    margin-left: calc(#{$keywidth}/ 2);
+    margin-left: calc(-#{$keywidth}/ 2);
     z-index: 9999;
   }
 }
