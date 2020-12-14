@@ -4,6 +4,7 @@ import * as cocoSSD from "@tensorflow-models/coco-ssd";
 import * as Tone from 'tone'
 
 export module TensorflowModel {
+
   export async function detectVideo(video: HTMLVideoElement, canvas: HTMLCanvasElement, soundObjects: SoundObject[]) {
     if (video !== undefined) {
       const model = await cocoSSD.load({ base: "mobilenet_v2" });
@@ -51,7 +52,7 @@ export module TensorflowModel {
 
     predictions.forEach(prediction => {
       if (!(prediction.bbox[2] > 200 && prediction.bbox[3] > 200)) {
-        
+
       const x = prediction.bbox[0];
       const y = prediction.bbox[1];
       const width = prediction.bbox[2];
@@ -64,7 +65,7 @@ export module TensorflowModel {
         let isColliding =  !(soundObjX >= (x + width) || soundObjY >= y + height || (soundObjX + soundObjWidth) <= x || (soundObjY + soundObjHeight) <= y)
         if(isColliding){
           console.log("is colliding");
-          
+
           sampler.triggerAttackRelease(Tone.Frequency(soundObjects.indexOf(soundObject) + 69, "midi").toNote(),  "8n", 4);
         }
         ctx.strokeStyle = "#ff0081";
