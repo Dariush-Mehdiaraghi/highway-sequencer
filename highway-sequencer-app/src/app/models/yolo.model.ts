@@ -87,7 +87,7 @@ export module YoloModel {
 
           if(isColliding){
             console.log("is colliding");
-            sampler.triggerAttackRelease(Tone.Frequency(soundObjects.indexOf(soundObject) + 69, "midi").toNote(),  "8n", 4);
+            sampler.triggerAttackRelease(soundObject.name, "2n");
           }
           ctx.strokeStyle = "#ff0081";
           ctx.strokeRect(soundObjX, soundObjY, soundObjWidth, soundObjHeight);
