@@ -48,7 +48,7 @@ export module YoloModel {
 
     const predictions = await model.predict(video, {
       maxBoxes: 20,          // defaults to 20
-      scoreThreshold: .4,   // defaults to .5
+      scoreThreshold: .2,   // defaults to .5
       iouThreshold: .3,     // defaults to .3
     });
 
@@ -87,7 +87,6 @@ export module YoloModel {
         let isColliding = !(soundObjX >= (x + width) || soundObjY >= y + height || (soundObjX + soundObjWidth) <= x || (soundObjY + soundObjHeight) <= y)
 
         if (isColliding) {
-          console.log("is colliding");
           soundObjectService.setTriggered = (soundObject.name)
           sampler.triggerAttackRelease(soundObject.name, "2n");
         }
