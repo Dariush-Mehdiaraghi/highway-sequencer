@@ -47,7 +47,7 @@ export module YoloModel {
 
     const predictions = await model.predict(video, {
       maxBoxes: 20,          // defaults to 20
-      scoreThreshold: .5,   // defaults to .5
+      scoreThreshold: .4,   // defaults to .5
       iouThreshold: .3,     // defaults to .3
     });
 
@@ -87,7 +87,7 @@ export module YoloModel {
 
           if(isColliding){
             console.log("is colliding");
-            sampler.triggerAttackRelease(Tone.Frequency(soundObjects.indexOf(soundObject) + 69, "midi").toNote(),  "8n", 4);
+            sampler.triggerAttackRelease(soundObject.name, "2n");
           }
           ctx.strokeStyle = "#ff0081";
           ctx.strokeRect(soundObjX, soundObjY, soundObjWidth, soundObjHeight);
