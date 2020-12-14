@@ -45,7 +45,11 @@ export module YoloModel {
   }
   export async function detectFrame(video, canvas, model, soundObjects: SoundObject[]) {
 
-    const predictions = await model.predict(video);
+    const predictions = await model.predict(video, {
+      maxBoxes: 20,          // defaults to 20
+      scoreThreshold: .5,   // defaults to .5
+      iouThreshold: .3,     // defaults to .3
+    });
 
     this.renderPredictions(video, canvas, predictions, soundObjects);
 
