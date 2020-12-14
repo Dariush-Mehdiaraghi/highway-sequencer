@@ -1,20 +1,9 @@
-import {
-  Component,
-  ElementRef,
-  EventEmitter,
-  Input,
-  OnDestroy,
-  OnInit,
-  Output,
-  ViewChild,
-  ViewEncapsulation
-} from '@angular/core';
+import {Component, ElementRef, Input, OnDestroy, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import videojs from 'video.js';
-import {BehaviorSubject, Observable} from "rxjs";
-import * as cocoSSD from "@tensorflow-models/coco-ssd";
-import {TensorflowModel} from "../../models/tensorflow.model";
-import { SoundObject } from 'src/app/models/sound-object.model';
-import { SoundObjectService } from 'src/app/services/sound-object.service';
+import {SoundObject} from 'src/app/models/sound-object.model';
+import {SoundObjectService} from 'src/app/services/sound-object.service';
+import {YoloModel} from "../../models/yolo.model";
+import {YoloTypeModel} from "../../models/yoloType.model";
 
 @Component({
   selector: 'app-vjs-player',
@@ -70,13 +59,12 @@ export class VjsPlayerComponent implements OnInit, OnDestroy {
   }
 
   public async videoDataLoaded() {
-    console.log('video detection: ', this.enabledDetection)
     if (this.enabledDetection) {
       const component = document.getElementById("video-big");
       const video = <HTMLVideoElement>component.getElementsByClassName("vjs-tech")[0];
       const canvas = <HTMLCanvasElement> document.getElementById("canvas");
-      
-      await TensorflowModel.detectVideo(video, canvas, this.soundObjects);
+      await YoloModel.detectVideo(YoloTypeModel.yoloV3Tiny, video, canvas, this.soundObjects);
+      //await TensorflowModel.detectVideo(video, canvas, this.soundObjects);
     }
   }
 }
