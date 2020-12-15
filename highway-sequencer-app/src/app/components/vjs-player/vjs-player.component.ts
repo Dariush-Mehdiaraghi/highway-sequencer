@@ -4,6 +4,7 @@ import {SoundObject} from 'src/app/models/sound-object.model';
 import {SoundObjectService} from 'src/app/services/sound-object.service';
 import {YoloModel} from "../../models/yolo.model";
 import {YoloTypeModel} from "../../models/yoloType.model";
+import {TensorflowModel} from "../../models/tensorflow.model";
 
 @Component({
   selector: 'app-vjs-player',
