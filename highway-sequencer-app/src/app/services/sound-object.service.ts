@@ -48,11 +48,10 @@ export class SoundObjectService {
         }
       }
     })
-  
+
       aOctave.push(...incomingNotes)
     }
 
     this._soundObjects.next(aOctave);
-
   }
 }
