@@ -48,7 +48,7 @@ export module YoloModel {
 
     const predictions = await model.predict(video, {
       maxBoxes: 20,          // defaults to 20
-      scoreThreshold: .2,   // defaults to .5
+      scoreThreshold: .5,   // defaults to .5
       iouThreshold: .3,     // defaults to .3
     });
 

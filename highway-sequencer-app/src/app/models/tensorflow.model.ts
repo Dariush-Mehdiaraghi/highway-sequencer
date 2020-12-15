@@ -66,14 +66,15 @@ export module TensorflowModel {
         let isColliding =  !(soundObjX >= (x + width) || soundObjY >= y + height || (soundObjX + soundObjWidth) <= x || (soundObjY + soundObjHeight) <= y)
         if(isColliding){
           console.log("is colliding");
-          sampler.triggerAttackRelease(soundObject.name, "2n");
+          sampler.triggerAttackRelease(soundObject.name, "8n");
           //this.soundObjectService.setTriggered
          // sampler.triggerAttackRelease(Tone.Frequency(soundObjects.indexOf(soundObject) + 69, "midi").toNote(), "2n");
         }
         ctx.strokeStyle = "#ff0081";
         ctx.strokeRect(soundObjX, soundObjY, soundObjWidth, soundObjHeight);
 
-      })
+      }
+      )
 
 
 

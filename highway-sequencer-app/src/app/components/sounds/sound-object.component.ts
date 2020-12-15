@@ -9,8 +9,9 @@ import { SoundObjectService } from 'src/app/services/sound-object.service';
 
   template: `
 
-  <div ngDraggable class="sound-object resizable-widget ng-resizable" [class.triggered]="soundObject.triggered" [class.black-key]="soundObject.name.includes('#')" [class.has-margin-left]="soundObject.name.includes('C#') || soundObject.name.includes('F#') " (mouseup)="mouseUp()">
+  <div ngDraggable class="sound-object resizable-widget ng-resizable" [class.triggered]="soundObject.triggered" [class.black-key]="soundObject.name.includes('#')" [class.has-margin-left]="soundObject.name.includes('C#') || soundObject.name.includes('F#') " (resize)="updatePosition()" (mousemove)="updatePosition()">
     {{ soundObject.name }}
+    {{ soundObject.position.top }}
   </div>
 `,
 })
@@ -28,12 +29,19 @@ export class SoundObjectComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-  }
-  public mouseUp() {
-
     const boundingRect = this.el.nativeElement.children[0].getBoundingClientRect()
-   this.soundObjectService.setSoundObjectPosition = { name: this.soundObject.name, position: { left: boundingRect.left, top: boundingRect.top, width: boundingRect.width, height: boundingRect.height } }
+    this.soundObjectService.setSoundObjectPosition = { name: this.soundObject.name, position: { left: boundingRect.left, top: boundingRect.top, width: boundingRect.width, height: boundingRect.height } }
+
+    window.addEventListener('resize', {
+      handleEvent: this.updatePosition.bind(this)
+    });
+    window.addEventListener('scroll', {
+      handleEvent: this.updatePosition.bind(this)
+    });
+  }
+  public updatePosition() {
+    const boundingRect = this.el.nativeElement.children[0].getBoundingClientRect()
+    this.soundObjectService.setSoundObjectPosition = { name: this.soundObject.name, position: { left: boundingRect.left, top: boundingRect.top, width: boundingRect.width, height: boundingRect.height } }
 
   }
 

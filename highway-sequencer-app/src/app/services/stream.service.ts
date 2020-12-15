@@ -46,7 +46,7 @@ export class StreamService {
 
     streamsFound.push({ id: 8, url: "https://5d68870966db6.streamlock.net/EzeAppCameras/KTCamera.stream/chunklist_w117724110.m3u8", videoType: "application/vnd.apple.mpegurl", name: "Kambodscha"});
     https://www.earthcam.com/world/ireland/dublin/?cam=templebar
-    streamsFound.push({ id: 9, url: "https://videos-3.earthcam.com/fecnetwork/4054.flv/chunklist_w1121599426.m3u8",videoType: "application/vnd.apple.mpegurl", name: "dublin"});
+    streamsFound.push({ id: 9, url: "https://videos-3.earthcam.com/fecnetwork/4054.flv/chunklist_w996964948.m3u8",videoType: "application/vnd.apple.mpegurl", name: "dublin"});
 
     
     return streamsFound;
