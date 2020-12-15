@@ -87,9 +87,10 @@ export module YoloModel {
         let soundObjWidth = soundObject.position.width
         let isColliding = !(soundObjX >= (x + width) || soundObjY >= y + height || (soundObjX + soundObjWidth) <= x || (soundObjY + soundObjHeight) <= y)
 
-        if (isColliding) {
+        if (isColliding && !soundObject.triggered) {
           soundObjectService.setTriggered = (soundObject.name);
           sampler.triggerAttackRelease(soundObject.name, "2n");
+        
         }
         else if(soundObject.triggered){
           soundObjectService.setNotTriggered = (soundObject.name)
