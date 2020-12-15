@@ -3,18 +3,9 @@ import yolo from 'tfjs-yolo';
 import { SoundObject } from "./sound-object.model";
 import * as Tone from "tone";
 import { YoloTypeModel } from "./yoloType.model";
+import {ToneModel} from "./tone.model";
 
 export module YoloModel {
-  const sampler = new Tone.Sampler({
-    urls: {
-      "C4": "C4.mp3",
-      "D#4": "Ds4.mp3",
-      "F#4": "Fs4.mp3",
-      "A4": "A4.mp3",
-    },
-    release: 4,
-    baseUrl: "https://tonejs.github.io/audio/salamander/",
-  }).toDestination();
 
   export async function detectVideo(library: YoloTypeModel, video: HTMLVideoElement, canvas: HTMLCanvasElement, soundObjects: SoundObject[], soundObjectService: SoundObjectService) {
     if (video !== undefined) {
@@ -89,7 +80,7 @@ export module YoloModel {
 
         if (isColliding) {
           soundObjectService.setTriggered = (soundObject.name);
-          sampler.triggerAttackRelease(soundObject.name, "2n");
+          ToneModel.trigger(soundObject.name);
         }
         else if(soundObject.triggered){
           soundObjectService.setNotTriggered = (soundObject.name)
