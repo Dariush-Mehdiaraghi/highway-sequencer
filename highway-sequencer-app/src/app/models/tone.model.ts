@@ -30,8 +30,5 @@ export class ToneModel {
       this.sampler.triggerAttackRelease(name, "2n");
       this.triggeredTones.push({ tone: name, time: new Date()});
     }
-
-
-
   }
 }

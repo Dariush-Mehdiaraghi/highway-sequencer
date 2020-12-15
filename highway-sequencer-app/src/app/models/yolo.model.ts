@@ -89,7 +89,6 @@ export module YoloModel {
         ctx.strokeRect(soundObjX, soundObjY, soundObjWidth, soundObjHeight);
       });
 
-
       ctx.fillStyle = "#000000";
       ctx.fillText(prediction.class, x, y);
 
