@@ -20,6 +20,7 @@ export module YoloModel {
     if (video !== undefined) {
       let model = null;
       console.log("Loading model: " + library);
+
       switch (library) {
         case YoloTypeModel.yoloV1Tiny:
           model = await yolo.v1tiny();
@@ -48,8 +49,8 @@ export module YoloModel {
 
     const predictions = await model.predict(video, {
       maxBoxes: 20,          // defaults to 20
-      scoreThreshold: .2,   // defaults to .5
-      iouThreshold: .3,     // defaults to .3
+      scoreThreshold: .1,   // defaults to .5
+      iouThreshold: .1,     // defaults to .3
     });
 
     this.renderPredictions(video, canvas, predictions, soundObjects, soundObjectService);
@@ -87,7 +88,7 @@ export module YoloModel {
         let isColliding = !(soundObjX >= (x + width) || soundObjY >= y + height || (soundObjX + soundObjWidth) <= x || (soundObjY + soundObjHeight) <= y)
 
         if (isColliding) {
-          soundObjectService.setTriggered = (soundObject.name)
+          soundObjectService.setTriggered = (soundObject.name);
           sampler.triggerAttackRelease(soundObject.name, "2n");
         }
         else if(soundObject.triggered){
