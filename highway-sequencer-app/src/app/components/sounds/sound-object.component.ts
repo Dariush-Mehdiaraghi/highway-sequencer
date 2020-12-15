@@ -9,9 +9,8 @@ import { SoundObjectService } from 'src/app/services/sound-object.service';
 
   template: `
 
-  <div ngDraggable class="sound-object resizable-widget ng-resizable" [class.triggered]="soundObject.triggered" [class.black-key]="soundObject.name.includes('#')" [class.has-margin-left]="soundObject.name.includes('C#') || soundObject.name.includes('F#') " (resize)="updatePosition()" (mousemove)="updatePosition()">
+  <div ngDraggable [position]="position" class="sound-object resizable-widget ng-resizable" [class.black-key]="soundObject.name.includes('#')" [class.has-margin-left]="soundObject.name.includes('C#') || soundObject.name.includes('F#') " (resize)="updatePosition()" (mousemove)="updatePosition()" (dblclick)="resetPosition()">
     {{ soundObject.name }}
-    {{ soundObject.position.top }}
   </div>
 `,
 })
@@ -27,11 +26,11 @@ export class SoundObjectComponent implements OnInit {
   constructor(private el: ElementRef, private soundObjectService: SoundObjectService) {
 
   }
-
+  position
   ngOnInit(): void {
     const boundingRect = this.el.nativeElement.children[0].getBoundingClientRect()
     this.soundObjectService.setSoundObjectPosition = { name: this.soundObject.name, position: { left: boundingRect.left, top: boundingRect.top, width: boundingRect.width, height: boundingRect.height } }
-
+    
     window.addEventListener('resize', {
       handleEvent: this.updatePosition.bind(this)
     });
@@ -42,6 +41,10 @@ export class SoundObjectComponent implements OnInit {
   public updatePosition() {
     const boundingRect = this.el.nativeElement.children[0].getBoundingClientRect()
     this.soundObjectService.setSoundObjectPosition = { name: this.soundObject.name, position: { left: boundingRect.left, top: boundingRect.top, width: boundingRect.width, height: boundingRect.height } }
+
+  }
+  public resetPosition() {
+    this.position = {x: 0, y:0 } 
 
   }
 

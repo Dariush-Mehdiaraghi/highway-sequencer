@@ -85,12 +85,12 @@ export module YoloModel {
         else if(soundObject.triggered){
           soundObjectService.setNotTriggered = (soundObject.name)
         }
-        ctx.strokeStyle = "#ff0081";
-        ctx.strokeRect(soundObjX, soundObjY, soundObjWidth, soundObjHeight);
+        // ctx.strokeStyle = "#ff0081";
+        // ctx.strokeRect(soundObjX, soundObjY, soundObjWidth, soundObjHeight);
       });
 
-      ctx.fillStyle = "#000000";
-      ctx.fillText(prediction.class, x, y);
+      // ctx.fillStyle = "#000000";
+      // ctx.fillText(prediction.class, x, y);
 
     });
   };
