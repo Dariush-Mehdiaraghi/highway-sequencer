@@ -1,7 +1,7 @@
 
 # highway-sequencer 🛣 COMPX Project with [Luka Kramer](https://github.com/remarkies)
  
->Your composing skills lack the melodic genius of a good old american highway? We got you covered:
+>Your composing skills lack the melodic genius of a good old American highway? We got you covered:
 
 Select a webcam and place your notes on the highway when a car passes through it the note will be triggered. 🎶
 
